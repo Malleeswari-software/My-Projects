@@ -1,0 +1,705 @@
+/* Additional styling for Loyola Sparkle Upgraded features */
+:root {
+  --background: #ffffff;
+  --foreground: #0b1f3a;
+  --primary: #0b1f3a;
+  --primary-foreground: #ffffff;
+  --brand-gold: #e5a93b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0b1f3a;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --card: #ffffff;
+  --card-foreground: #0b1f3a;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #0b1f3a;
+  --radius: 0.5rem;
+
+  --loyola-navy: #0b1f3a;
+  --loyola-navy-deep: #071527;
+  --loyola-navy-light: #163259;
+  --loyola-gold: #e5a93b;
+  --loyola-gold-hover: #c98e27;
+  --loyola-gold-light: #fff8eb;
+  --loyola-burgundy: #7a1c27;
+  --loyola-emerald: #107c41;
+  --loyola-surface: #f9fbfd;
+  --loyola-border: #e2e8f0;
+}
+
+/* Header & Announcement enhancements */
+.announcement-bar {
+  background: linear-gradient(90deg, #071527 0%, #163259 50%, #071527 100%);
+  color: #f1f5f9;
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(229, 169, 59, 0.3);
+  z-index: 50;
+  position: relative;
+}
+
+.announcement-badge {
+  background: var(--loyola-gold);
+  color: #0b1f3a;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-contact-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-contact-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.top-contact-links a:hover {
+  color: var(--loyola-gold);
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-top-gold {
+  background: transparent;
+  border: 1px solid var(--loyola-gold);
+  color: var(--loyola-gold);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-top-gold:hover {
+  background: var(--loyola-gold);
+  color: #0b1f3a;
+}
+
+.btn-top-portal {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.btn-top-portal:hover {
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* Live Notice Ticker */
+.notice-ticker-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--loyola-border);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+
+.notice-ticker-title {
+  background: #0b1f3a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+}
+
+.notice-ticker-content {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.notice-ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: noticeMarquee 35s linear infinite;
+}
+
+.notice-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes noticeMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.notice-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 32px;
+  color: #334155;
+  cursor: pointer;
+}
+
+.notice-ticker-item:hover {
+  color: #0b1f3a;
+  text-decoration: underline;
+}
+
+.notice-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.notice-tag-admissions { background: #e0f2fe; color: #0369a1; }
+.notice-tag-results { background: #fef3c7; color: #b45309; }
+.notice-tag-circular { background: #dcfce7; color: #15803d; }
+.notice-tag-event { background: #f3e8ff; color: #7e22ce; }
+
+/* Sister Institutions Cards */
+.institutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.institution-card {
+  background: #ffffff;
+  border: 1px solid var(--loyola-border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.institution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(11, 31, 58, 0.1);
+  border-color: var(--loyola-gold);
+}
+
+.inst-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--loyola-emerald);
+  background: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.inst-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--loyola-navy);
+  margin-bottom: 6px;
+}
+
+.inst-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Toppers Gallery */
+.toppers-section {
+  background: #f8fafc;
+  border-top: 1px solid var(--loyola-border);
+  border-bottom: 1px solid var(--loyola-border);
+}
+
+.toppers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.topper-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(11, 31, 58, 0.08);
+  border: 1px solid var(--loyola-border);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.topper-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.16);
+  border-color: var(--loyola-gold);
+}
+
+.topper-card-img-wrap {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background: #0b1f3a;
+}
+
+.topper-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.topper-card:hover .topper-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+.topper-zoom-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(229, 169, 59, 0.4);
+}
+
+.topper-card-info {
+  padding: 18px;
+}
+
+.topper-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--loyola-navy);
+  margin-bottom: 4px;
+}
+
+.topper-card-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Academic Facilities Showcase */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.facility-card {
+  background: #ffffff;
+  border: 1px solid var(--loyola-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.facility-card:hover {
+  border-color: var(--loyola-navy-light);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.facility-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--loyola-gold-light);
+  color: var(--loyola-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Online Admissions Portal */
+.admissions-container {
+  background: #ffffff;
+  border: 1px solid var(--loyola-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(11, 31, 58, 0.08);
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.admissions-header {
+  background: linear-gradient(135deg, #071527 0%, #0b1f3a 50%, #163259 100%);
+  color: #ffffff;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.admissions-header h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.admissions-header p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.admissions-badge {
+  background: var(--loyola-gold);
+  color: #071527;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.admissions-form-body {
+  padding: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-custom label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group-custom label .req {
+  color: #ef4444;
+}
+
+.form-control-custom {
+  height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: all 0.2s;
+  background: #ffffff;
+  outline: none;
+}
+
+.form-control-custom:focus {
+  border-color: var(--loyola-navy-light);
+  box-shadow: 0 0 0 3px rgba(22, 50, 89, 0.15);
+}
+
+.calculator-card {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.calculator-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Modals System */
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop-custom.active {
+  display: grid;
+  opacity: 1;
+}
+
+.modal-window-custom {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-header-custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--loyola-border);
+  background: #f8fafc;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.modal-body-custom {
+  padding: 24px;
+}
+
+/* Interactive Topper Zoom Modal */
+.topper-zoom-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  min-height: 480px;
+  max-height: 75vh;
+  border-radius: 8px;
+}
+
+.topper-zoom-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  transition: transform 0.2s ease-out;
+  transform-origin: center center;
+  cursor: grab;
+}
+
+.topper-zoom-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.zoom-tool-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+.zoom-tool-btn:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Application Print Slip */
+.application-slip {
+  background: #ffffff;
+  border: 2px solid #0b1f3a;
+  padding: 32px;
+  border-radius: 10px;
+  color: #1e293b;
+  font-family: inherit;
+  margin-top: 10px;
+}
+
+.slip-header {
+  text-align: center;
+  border-bottom: 2px solid #0b1f3a;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.slip-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0b1f3a;
+  margin: 4px 0;
+}
+
+.slip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  font-size: 0.9rem;
+}
+
+.slip-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #cbd5e1;
+  padding: 6px 0;
+}
+
+.slip-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.slip-val {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.slip-stamp-box {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #cbd5e1;
+}
+
+/* Toast Container */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-msg {
+  background: #0b1f3a;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  border-left: 4px solid var(--loyola-gold);
+  animation: toastIn 0.3s ease;
+}
+
+@keyframes toastIn {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .toppers-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row, .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+  .slip-grid {
+    grid-template-columns: 1fr;
+  }
+  .announcement-bar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
